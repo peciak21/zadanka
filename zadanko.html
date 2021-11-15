@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        <input type="number" name="liczba1" placeholder="wpisz pierwszą liczbę">
+        <input type="number" name="liczba2" placeholder="wpisz drugą liczbę">
+        <input type="submit" value="oblicz">
+    </form>
+
+    <div class="w"></div>
+    <script>
+        //odwolujemy sie do formularza (tworzymy zmienną która przechowuje obiekt for)
+        const formularz = document.querySelector('form');
+        //pobieramy diva o klasie wynik
+        const wynik = document.querySelector('.w');
+        //przypisujemy obsługe zdarzenia submit do formularza
+        formularz.addEventListener('submit', (e) => {
+            //zatrzymujemy domyslna akcje  obslugi formularza przez przeglądarke
+            e.preventDefault();
+            //alert('działa!!!');
+            //pobieramy wartosc pola liczba 1 i liczbza2 
+            const l1 = document.querySelector('input[name="liczba1"]').value * 1;
+            const l2 = document.querySelector('input[name="liczba2"]').value * 1;
+            //towrzymy zmienna suma która bedzie miala wartosc sumy liczb cyfr z formularza
+            const suma = l1 + l2;
+            //wyswietalmy sume w elemencie div
+            //wynik.textContent = 'suma wynosi: ' + suma;
+            wynik.textContent = `Suma liczb ${l1} i ${l2} wynosi: ${suma}`;
+        });
+
+    </script>
+</body>
+
+
+</html>
