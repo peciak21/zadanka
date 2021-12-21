@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        
+        <input type="number" name="l1" placeholder="wpisz a" />
+        <input type="number" name="l2" placeholder="wpisz b" />
+        <input type="submit" value="Sprawdź" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name= "l1"]').value * 1;
+            const b = document.querySelector('input[name="l2"]').value * 1;
+            
+            
+            var suma = 0;
+            var ilosc = 0;
+            var srednia = 0;
+
+            for(let i = a; i <= b; i++){
+                ilosc++;
+                suma += i;
+            }
+
+            srednia = suma/ilosc;
+
+            diw.textContent = `${suma} / ${ilosc} = ${srednia}`;
+
+        });
+    </script>
+</body>
+</html>

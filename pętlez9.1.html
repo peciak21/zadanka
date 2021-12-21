@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        
+        <input type="number" name="l1" placeholder="wpisz a" />
+        <input type="submit" value="Sprawdź" />
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const a = document.querySelector('input[name= "l1"]').value * 1;
+            
+            diw.textContent = `naturalnymi dzielnikami liczby ${a} są: `;
+
+            for(let i = 1; i <= a; i++){
+                if(a % i == 0){
+                    diw.textContent += `${i}, `;
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
